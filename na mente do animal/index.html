@@ -1,0 +1,1246 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b3b2e" />
+    <title>Na Mente do Animal — Curso Online</title>
+    <meta
+      name="description"
+      content="Curso online Na Mente do Animal: comportamento e treinamento canino. Aprenda a melhorar a comunicação com seu cão e ter resultados sem gritos, sem punições e com segurança."
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #1220e0;
+        --muted: #55635e;
+        --brand: #0b3b2e; /* verde escuro */
+        --brand-2: #0f4f3d;
+        --accent: #18a957; /* verde do botão */
+        --accent-2: #12904a;
+        --card: #f6fbf8;
+        --border: rgba(11, 59, 46, 0.14);
+        --shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+        --shadow-soft: 0 10px 26px rgba(11, 59, 46, 0.1);
+        --radius: 18px;
+        --radius-sm: 14px;
+        --container: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          "Noto Sans", "Helvetica Neue", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: -999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip-link:focus {
+        left: 18px;
+        top: 16px;
+        width: auto;
+        height: auto;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: #fff;
+        border: 1px solid var(--border);
+        z-index: 9999;
+      }
+
+      /* Header */
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.86);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(11, 59, 46, 0.1);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+        background: radial-gradient(
+          60% 60% at 30% 25%,
+          #1c7f63 0%,
+          var(--brand) 60%,
+          #052118 100%
+        );
+        box-shadow: 0 10px 22px rgba(11, 59, 46, 0.22);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        position: relative;
+      }
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        inset: 10px 12px 12px 10px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+      }
+      .brand-text {
+        display: grid;
+        line-height: 1.1;
+      }
+      .brand-text strong {
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        color: var(--brand);
+      }
+      .brand-text span {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .nav a {
+        font-size: 13px;
+        text-decoration: none;
+        color: #20322d;
+        padding: 9px 10px;
+        border-radius: 12px;
+        transition: background 160ms ease, color 160ms ease;
+      }
+      .nav a:hover {
+        background: rgba(11, 59, 46, 0.06);
+        color: var(--brand);
+      }
+      .nav .cta-mini {
+        display: none;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        cursor: pointer;
+        user-select: none;
+        transition: transform 120ms ease, box-shadow 160ms ease, background 160ms ease,
+          border-color 160ms ease;
+      }
+      .btn:active {
+        transform: translateY(1px);
+      }
+      .btn-primary {
+        background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
+        color: #072014;
+        box-shadow: 0 14px 30px rgba(24, 169, 87, 0.24),
+          0 8px 18px rgba(11, 59, 46, 0.14);
+      }
+      .btn-primary:hover {
+        box-shadow: 0 18px 34px rgba(24, 169, 87, 0.28),
+          0 10px 22px rgba(11, 59, 46, 0.16);
+      }
+      .btn-secondary {
+        background: #fff;
+        color: var(--brand);
+        border-color: rgba(11, 59, 46, 0.18);
+        box-shadow: 0 12px 26px rgba(11, 59, 46, 0.1);
+      }
+      .btn-secondary:hover {
+        background: rgba(11, 59, 46, 0.04);
+      }
+      .btn small {
+        font-weight: 700;
+        opacity: 0.85;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 12px;
+        border-radius: 999px;
+        background: rgba(11, 59, 46, 0.07);
+        color: var(--brand);
+        border: 1px solid rgba(11, 59, 46, 0.1);
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 0.2px;
+      }
+      .pill-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px rgba(24, 169, 87, 0.16);
+      }
+
+      /* Sections */
+      section {
+        padding: 64px 0;
+      }
+      .section-title {
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.15;
+        margin: 0 0 10px;
+        letter-spacing: -0.4px;
+        color: #07110f;
+      }
+      .section-subtitle {
+        margin: 0;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 52px 0 18px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: -120px -140px auto -140px;
+        height: 520px;
+        background: radial-gradient(
+            45% 55% at 20% 30%,
+            rgba(24, 169, 87, 0.26) 0%,
+            rgba(24, 169, 87, 0) 70%
+          ),
+          radial-gradient(
+            45% 55% at 70% 30%,
+            rgba(11, 59, 46, 0.18) 0%,
+            rgba(11, 59, 46, 0) 70%
+          ),
+          radial-gradient(
+            35% 45% at 55% 65%,
+            rgba(11, 59, 46, 0.1) 0%,
+            rgba(11, 59, 46, 0) 70%
+          );
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 28px;
+        align-items: center;
+        position: relative;
+      }
+
+      .hero h1 {
+        margin: 14px 0 12px;
+        font-size: clamp(30px, 4.2vw, 52px);
+        line-height: 1.06;
+        letter-spacing: -1.1px;
+        color: #07110f;
+      }
+      .hero h1 span {
+        color: var(--brand);
+        text-shadow: 0 1px 0 rgba(11, 59, 46, 0.08);
+      }
+      .hero p {
+        margin: 0 0 18px;
+        color: #31453f;
+        font-size: 17px;
+        max-width: 60ch;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        margin-top: 14px;
+      }
+      .hero-meta {
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        color: var(--muted);
+        font-size: 13px;
+        align-items: center;
+      }
+      .hero-meta b {
+        color: #233a34;
+      }
+
+      .price-box {
+        background: linear-gradient(180deg, #ffffff 0%, #f6fbf8 100%);
+        border: 1px solid rgba(11, 59, 46, 0.16);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-soft);
+        padding: 18px;
+      }
+      .price-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .price-top strong {
+        color: var(--brand);
+        font-size: 14px;
+        letter-spacing: 0.2px;
+      }
+      .badge {
+        font-size: 12px;
+        font-weight: 800;
+        color: #073524;
+        background: rgba(24, 169, 87, 0.16);
+        border: 1px solid rgba(24, 169, 87, 0.26);
+        padding: 7px 10px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      .price {
+        display: grid;
+        gap: 4px;
+        margin: 8px 0 12px;
+      }
+      .price .value {
+        font-size: 40px;
+        line-height: 1;
+        letter-spacing: -0.8px;
+        font-weight: 900;
+        color: #07110f;
+      }
+      .price .value small {
+        font-size: 14px;
+        font-weight: 900;
+        color: #233a34;
+        vertical-align: top;
+        margin-right: 6px;
+      }
+      .price .note {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .list {
+        margin: 12px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+      .list li {
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        gap: 10px;
+        color: #2a3f39;
+        font-size: 14px;
+      }
+      .check {
+        width: 18px;
+        height: 18px;
+        border-radius: 6px;
+        display: grid;
+        place-items: center;
+        background: rgba(24, 169, 87, 0.16);
+        border: 1px solid rgba(24, 169, 87, 0.26);
+        color: #0b3b2e;
+        font-weight: 900;
+        font-size: 12px;
+      }
+      .price-box .btn {
+        width: 100%;
+        margin-top: 14px;
+        padding: 16px 18px;
+        border-radius: 16px;
+      }
+      .trust {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 12px;
+        align-items: center;
+      }
+      .trust span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border: 1px solid rgba(11, 59, 46, 0.12);
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 999px;
+      }
+
+      /* Benefits */
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 22px;
+      }
+      .card {
+        background: linear-gradient(180deg, #ffffff 0%, var(--card) 100%);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: 0 12px 26px rgba(11, 59, 46, 0.08);
+        transition: transform 140ms ease, box-shadow 160ms ease,
+          border-color 160ms ease;
+      }
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(11, 59, 46, 0.1);
+        border-color: rgba(11, 59, 46, 0.18);
+      }
+      .icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 16px;
+        background: rgba(11, 59, 46, 0.08);
+        border: 1px solid rgba(11, 59, 46, 0.12);
+        display: grid;
+        place-items: center;
+        color: var(--brand);
+      }
+      .card h3 {
+        margin: 12px 0 6px;
+        font-size: 16px;
+        letter-spacing: -0.2px;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* Bonus */
+      .bonus-wrap {
+        margin-top: 22px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 16px;
+        align-items: stretch;
+      }
+      .bonus-main {
+        padding: 22px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(11, 59, 46, 0.16);
+        background: linear-gradient(
+          180deg,
+          rgba(11, 59, 46, 0.06) 0%,
+          rgba(24, 169, 87, 0.1) 100%
+        );
+        box-shadow: 0 18px 34px rgba(11, 59, 46, 0.08);
+        overflow: hidden;
+        position: relative;
+      }
+      .bonus-main::before {
+        content: "";
+        position: absolute;
+        inset: -40px -20px auto auto;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(24, 169, 87, 0.25) 0%,
+          rgba(24, 169, 87, 0) 70%
+        );
+        pointer-events: none;
+      }
+      .bonus-main h3 {
+        margin: 10px 0 8px;
+        font-size: 20px;
+        letter-spacing: -0.3px;
+      }
+      .bonus-main p {
+        margin: 0;
+        color: #35524a;
+      }
+      .bonus-list {
+        margin: 14px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+      .bonus-item {
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        gap: 10px;
+        align-items: start;
+        color: #1d332d;
+        font-size: 14px;
+      }
+      .bonus-aside {
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: #fff;
+        padding: 18px;
+        box-shadow: 0 16px 32px rgba(11, 59, 46, 0.08);
+        display: grid;
+        align-content: start;
+        gap: 12px;
+      }
+      .mini-stat {
+        display: grid;
+        gap: 2px;
+        padding: 12px 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(11, 59, 46, 0.12);
+        background: rgba(246, 251, 248, 0.8);
+      }
+      .mini-stat strong {
+        color: var(--brand);
+        font-size: 13px;
+      }
+      .mini-stat span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* Testimonials */
+      .quote {
+        position: relative;
+        padding-top: 20px;
+      }
+      .quote::before {
+        content: "“";
+        position: absolute;
+        top: -4px;
+        left: 14px;
+        font-size: 56px;
+        line-height: 1;
+        color: rgba(11, 59, 46, 0.2);
+        font-weight: 900;
+      }
+      .person {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 14px;
+      }
+      .avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 16px;
+        background: linear-gradient(
+          180deg,
+          rgba(11, 59, 46, 0.12) 0%,
+          rgba(24, 169, 87, 0.16) 100%
+        );
+        border: 1px solid rgba(11, 59, 46, 0.14);
+        display: grid;
+        place-items: center;
+        color: var(--brand);
+        font-weight: 900;
+      }
+      .person strong {
+        display: block;
+        font-size: 14px;
+      }
+      .person span {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      /* Guarantee */
+      .guarantee {
+        padding: 0;
+      }
+      .guarantee-box {
+        border-radius: 24px;
+        background: linear-gradient(180deg, #ffffff 0%, #f5fbf8 100%);
+        border: 1px solid rgba(11, 59, 46, 0.16);
+        box-shadow: var(--shadow);
+        padding: 26px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 18px;
+        align-items: center;
+      }
+      .seal {
+        width: 120px;
+        height: 120px;
+        border-radius: 28px;
+        background: radial-gradient(
+            60% 60% at 30% 25%,
+            rgba(24, 169, 87, 0.28) 0%,
+            rgba(24, 169, 87, 0) 70%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(11, 59, 46, 0.1) 0%,
+            rgba(11, 59, 46, 0.04) 100%
+          );
+        border: 1px solid rgba(11, 59, 46, 0.14);
+        display: grid;
+        place-items: center;
+        color: var(--brand);
+        font-weight: 950;
+        text-align: center;
+        line-height: 1.05;
+        letter-spacing: -0.3px;
+        box-shadow: 0 14px 28px rgba(11, 59, 46, 0.1);
+      }
+      .seal small {
+        display: block;
+        font-size: 12px;
+        font-weight: 900;
+        opacity: 0.95;
+      }
+      .seal b {
+        display: block;
+        font-size: 28px;
+      }
+
+      /* Footer CTA */
+      .cta-final {
+        padding: 46px 0 72px;
+      }
+      .cta-panel {
+        border-radius: 26px;
+        background: linear-gradient(
+          180deg,
+          rgba(11, 59, 46, 0.08) 0%,
+          rgba(24, 169, 87, 0.1) 100%
+        );
+        border: 1px solid rgba(11, 59, 46, 0.14);
+        box-shadow: 0 18px 40px rgba(11, 59, 46, 0.1);
+        padding: 28px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: center;
+      }
+      .cta-panel h2 {
+        margin: 0 0 6px;
+      }
+      .cta-panel p {
+        margin: 0;
+        color: #33534b;
+      }
+
+      /* Utilities */
+      .muted {
+        color: var(--muted);
+      }
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        letter-spacing: 0.2px;
+        color: var(--brand);
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .kicker-line {
+        width: 22px;
+        height: 1px;
+        background: rgba(11, 59, 46, 0.3);
+      }
+
+      .divider {
+        height: 1px;
+        background: rgba(11, 59, 46, 0.1);
+        margin: 18px 0;
+      }
+
+      /* Responsive */
+      @media (max-width: 980px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .bonus-wrap {
+          grid-template-columns: 1fr;
+        }
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .guarantee-box {
+          grid-template-columns: 1fr;
+        }
+        .cta-panel {
+          grid-template-columns: 1fr;
+        }
+        .nav a {
+          display: none;
+        }
+        .nav .cta-mini {
+          display: inline-flex;
+        }
+      }
+      @media (max-width: 520px) {
+        section {
+          padding: 54px 0;
+        }
+        .header-inner {
+          padding: 12px 0;
+        }
+        .brand-text span {
+          display: none;
+        }
+        .price .value {
+          font-size: 36px;
+        }
+        .btn {
+          width: 100%;
+        }
+        .hero-actions {
+          gap: 10px;
+        }
+        .trust span {
+          width: 100%;
+          justify-content: center;
+        }
+        .seal {
+          width: 108px;
+          height: 108px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="header" aria-label="Cabeçalho">
+      <div class="container">
+        <div class="header-inner">
+          <a class="brand" href="#topo" aria-label="Ir para o topo">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span class="brand-text">
+              <strong>Na Mente do Animal</strong>
+              <span>Comportamento e Treinamento Canino</span>
+            </span>
+          </a>
+          <nav class="nav" aria-label="Navegação">
+            <a href="#beneficios">Benefícios</a>
+            <a href="#bonus">Bônus</a>
+            <a href="#depoimentos">Depoimentos</a>
+            <a href="#garantia">Garantia</a>
+            <a
+              class="btn btn-primary cta-mini"
+              href="https://pay.kiwify.com.br/axah2Nk"
+              target="_blank"
+              rel="noopener"
+              >Comprar (7 dias de garantia)</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="topo" aria-label="Seção principal">
+        <div class="container">
+          <div class="hero-grid">
+            <div>
+              <div class="pill" aria-label="Destaque do curso">
+                <span class="pill-dot" aria-hidden="true"></span>
+                Método prático e gentil para resultados reais
+              </div>
+              <h1>
+                Entenda o <span>porquê</span> do seu cão
+                <br />
+                e transforme o comportamento com clareza, calma e consistência.
+              </h1>
+              <p>
+                O curso <b>Na Mente do Animal</b> foi criado para quem quer treinar
+                com segurança e respeito — reduzindo ansiedade, latidos, puxões e
+                destruição — sem “fórmulas mágicas” e sem depender de tentativa e
+                erro.
+              </p>
+              <div class="hero-actions">
+                <a
+                  class="btn btn-primary"
+                  href="https://pay.kiwify.com.br/axah2Nk"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Ir para compra"
+                >
+                  Quero entrar agora
+                  <small>R$89,90 • 7 dias de garantia</small>
+                </a>
+                <a class="btn btn-secondary" href="#beneficios"
+                  >Ver o que você vai aprender</a
+                >
+              </div>
+              <div class="hero-meta" aria-label="Informações rápidas">
+                <span><b>Acesso</b> imediato</span>
+                <span><b>Garantia</b> 7 dias</span>
+                <span><b>Conteúdo</b> direto ao ponto</span>
+              </div>
+            </div>
+
+            <aside class="price-box" id="comprar" aria-label="Caixa de compra">
+              <div class="price-top">
+                <strong>Inscrição no curso</strong>
+                <span class="badge">Oferta única</span>
+              </div>
+
+              <div class="price" aria-label="Preço">
+                <div class="value"><small>R$</small>89,90</div>
+                <div class="note">Pagamento único. Acesso ao conteúdo do curso.</div>
+              </div>
+
+              <ul class="list" aria-label="O que está incluso">
+                <li>
+                  <span class="check" aria-hidden="true">✓</span
+                  ><span>Fundamentos do comportamento canino (sem complicar)</span>
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span
+                  ><span>Estratégias de treino com reforço e rotina</span>
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span
+                  ><span>Planos práticos para problemas comuns do dia a dia</span>
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span
+                  ><span>2 bônus exclusivos: Checklist + Áudio Calmante</span>
+                </li>
+              </ul>
+
+              <a
+                class="btn btn-primary"
+                href="https://pay.kiwify.com.br/axah2Nk"
+                target="_blank"
+                rel="noopener"
+                aria-label="Botão de compra"
+              >
+                Comprar com 7 dias de garantia
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <div class="trust" aria-label="Sinais de confiança">
+                <span>🔒 Compra segura</span>
+                <span>⚡ Acesso imediato</span>
+                <span>🛡️ Garantia 7 dias</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="beneficios" aria-label="Benefícios">
+        <div class="container">
+          <div class="kicker">
+            <span class="kicker-line" aria-hidden="true"></span>Benefícios
+          </div>
+          <h2 class="section-title">O que muda quando você entende a mente do seu cão</h2>
+          <p class="section-subtitle">
+            Você aprende a ler sinais, ajustar o ambiente e aplicar técnicas simples
+            que fazem o treino funcionar de verdade.
+          </p>
+
+          <div class="grid-3" role="list">
+            <article class="card" role="listitem">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 22s8-4.6 8-12V6l-8-3-8 3v4c0 7.4 8 12 8 12Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M9 12l2 2 4-5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <h3>Treino seguro e respeitoso</h3>
+              <p>
+                Estruture sessões sem medo, sem gritos e sem punições — com consistência
+                e clareza.
+              </p>
+            </article>
+
+            <article class="card" role="listitem">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 12a8 8 0 1 0 16 0"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M12 2v10l7 4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <h3>Rotina que reduz ansiedade</h3>
+              <p>
+                Aprenda como previsibilidade, enriquecimento e descanso impactam
+                diretamente o comportamento.
+              </p>
+            </article>
+
+            <article class="card" role="listitem">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M7 7h10v10H7z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M4 4h4M16 4h4M4 20h4M16 20h4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3>Comunicação que o cão entende</h3>
+              <p>
+                Timing, reforço e linguagem corporal: ajuste pequenos detalhes que
+                fazem enorme diferença.
+              </p>
+            </article>
+
+            <article class="card" role="listitem">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 21s-7-4.4-7-10V6l7-3 7 3v5c0 5.6-7 10-7 10Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M9 9h6M9 13h4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3>Plano prático para problemas comuns</h3>
+              <p>
+                Latidos, puxões, destruição e reatividade: organize ações por prioridade
+                e contexto.
+              </p>
+            </article>
+
+            <article class="card" role="listitem">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 12h16"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M12 4v16"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M7 7l10 10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    opacity="0.55"
+                  />
+                </svg>
+              </div>
+              <h3>Menos tentativa e erro</h3>
+              <p>
+                Entenda o “porquê” por trás do comportamento e escolha a intervenção
+                certa com confiança.
+              </p>
+            </article>
+
+            <article class="card" role="listitem">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M20 12a8 8 0 1 1-8-8"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M20 4v8h-8"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>Resultados que sustentam</h3>
+              <p>
+                Construa hábitos e habilidades que permanecem, em vez de “soluções” que
+                só duram alguns dias.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="bonus" aria-label="Bônus">
+        <div class="container">
+          <div class="kicker">
+            <span class="kicker-line" aria-hidden="true"></span>Bônus
+          </div>
+          <h2 class="section-title">Dois bônus para te dar segurança já no começo</h2>
+          <p class="section-subtitle">
+            Materiais rápidos para situações reais do dia a dia — quando você precisa
+            de um passo a passo claro.
+          </p>
+
+          <div class="bonus-wrap">
+            <div class="bonus-main">
+              <div class="pill" style="background: rgba(255, 255, 255, 0.55)">
+                <span class="pill-dot" aria-hidden="true"></span>
+                Inclusos sem custo extra
+              </div>
+              <h3>Checklist de Emergência + Áudio Calmante</h3>
+              <p>
+                Perfeito para momentos em que o comportamento “explode” e você precisa
+                agir com calma e estratégia.
+              </p>
+              <ul class="bonus-list" aria-label="Lista de bônus">
+                <li class="bonus-item">
+                  <span class="check" aria-hidden="true">✓</span
+                  ><span
+                    ><b>Checklist de Emergência:</b> o que fazer (e o que evitar) nas
+                    primeiras horas/dias.</span
+                  >
+                </li>
+                <li class="bonus-item">
+                  <span class="check" aria-hidden="true">✓</span
+                  ><span
+                    ><b>Áudio Calmante:</b> um recurso simples para ajudar seu cão a
+                    relaxar durante treinos e descanso.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <aside class="bonus-aside" aria-label="Resumo">
+              <div class="mini-stat">
+                <strong>Aplicação imediata</strong>
+                <span>Use já na primeira semana.</span>
+              </div>
+              <div class="mini-stat">
+                <strong>Foco no dia a dia</strong>
+                <span>Sem teorias longas e sem enrolação.</span>
+              </div>
+              <div class="mini-stat">
+                <strong>Para tutores ocupados</strong>
+                <span>Passos curtos e consistentes.</span>
+              </div>
+              <a
+                class="btn btn-primary"
+                href="https://pay.kiwify.com.br/axah2Nk"
+                target="_blank"
+                rel="noopener"
+                >Quero garantir por R$89,90</a
+              >
+              <div class="muted" style="font-size: 12px">
+                Garantia de 7 dias. Se não fizer sentido, você pede reembolso.
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="depoimentos" aria-label="Depoimentos">
+        <div class="container">
+          <div class="kicker">
+            <span class="kicker-line" aria-hidden="true"></span>Depoimentos
+          </div>
+          <h2 class="section-title">
+            Tutores que começaram confusos — e hoje têm mais paz em casa
+          </h2>
+          <p class="section-subtitle">
+            Três histórias fictícias para ilustrar os resultados e a experiência do curso.
+          </p>
+
+          <div class="grid-3" role="list" style="margin-top: 22px">
+            <article class="card quote" role="listitem">
+              <p style="margin: 0; color: #2c423c">
+                Eu achava que meu cachorro “fazia por mal”. Entender sinais de estresse e ajustar rotina mudou tudo. Em poucos dias,
+                os latidos diminuíram e eu passei a treinar com mais calma.
+              </p>
+              <div class="person" aria-label="Cliente">
+                <div class="avatar" aria-hidden="true">LM</div>
+                <div>
+                  <strong>Larissa M.</strong>
+                  <span>Tutora do Thor • Curitiba/PR</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card quote" role="listitem">
+              <p style="margin: 0; color: #2c423c">
+                O passo a passo do curso me tirou do “tenta isso, tenta aquilo”. Agora eu sei o que observar e como reforçar do jeito
+                certo. Passeio ficou muito mais leve.
+              </p>
+              <div class="person" aria-label="Cliente">
+                <div class="avatar" aria-hidden="true">RC</div>
+                <div>
+                  <strong>Rafael C.</strong>
+                  <span>Tutor da Mel • São Paulo/SP</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card quote" role="listitem">
+              <p style="margin: 0; color: #2c423c">
+                Eu queria treinar sem brigar com meu cão. A parte de rotina + reforço positivo foi um divisor de águas. A destruição
+                em casa reduziu muito e eu fiquei mais confiante.
+              </p>
+              <div class="person" aria-label="Cliente">
+                <div class="avatar" aria-hidden="true">AS</div>
+                <div>
+                  <strong>Ana S.</strong>
+                  <span>Tutora do Chico • Recife/PE</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="garantia" class="guarantee" aria-label="Garantia">
+        <div class="container">
+          <div class="guarantee-box">
+            <div>
+              <div class="kicker">
+                <span class="kicker-line" aria-hidden="true"></span>Garantia
+              </div>
+              <h2 class="section-title" style="margin-top: 10px">7 dias para testar sem risco</h2>
+              <p class="section-subtitle">
+                Se dentro de 7 dias você sentir que o curso não é para você, é só solicitar o reembolso. Simples e direto.
+              </p>
+              <div class="divider" aria-hidden="true"></div>
+              <div class="hero-actions" style="margin: 0">
+                <a
+                  class="btn btn-primary"
+                  href="https://pay.kiwify.com.br/axah2Nk"
+                  target="_blank"
+                  rel="noopener"
+                  >Entrar no curso por R$89,90</a>
+                <a class="btn btn-secondary" href="#beneficios">Rever benefícios</a>
+              </div>
+            </div>
+            <div class="seal" aria-label="Selo de garantia">
+              <small>Garantia</small>
+              <b>7</b>
+              <small>dias</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-final" aria-label="Chamada final para compra">
+        <div class="container">
+          <div class="cta-panel">
+            <div>
+              <h2 class="section-title" style="margin: 0 0 8px">
+                Pronto para melhorar a vida com seu cão?
+              </h2>
+              <p>
+                Comece hoje com um método claro, gentil e prático.
+                <b>Na Mente do Animal</b> por <b>R$89,90</b>.
+              </p>
+              <p class="muted" style="margin-top: 10px; font-size: 13px">
+                Dica: para transformar comportamento, o segredo é consistência — e aqui você vai ter um mapa.
+              </p>
+            </div>
+            <a
+              class="btn btn-primary"
+              href="https://pay.kiwify.com.br/axah2Nk"
+              target="_blank"
+              rel="noopener"
+              aria-label="Comprar agora com destaque"
+              >Comprar agora</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      aria-label="Rodapé"
+      style="padding: 22px 0 40px; border-top: 1px solid rgba(11, 59, 46, 0.1)"
+    >
+      <div
+        class="container"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px 18px;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <div class="muted" style="font-size: 13px">
+          © <span id="ano"></span> Na Mente do Animal — Curso Online
+        </div>
+        <div class="muted" style="font-size: 13px">
+          <a href="#topo" style="text-decoration: none">Voltar ao topo</a>
+        </div>
+      </div>
+      <script>
+        document.getElementById("ano").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
